@@ -3,19 +3,19 @@
 echo "Install script running"
 
 # # Install ZSH
-# sudo apt-get install -y vim zsh nano shopt
-# sudo chsh -s /bin/zsh $USER
+sudo apt-get install -y zsh
+sudo usermod -s /usr/bin/zsh $(whoami)
 
-# # Install and configure Oh My ZSH (if it is not already installed)
-# if [ -d "/home/coder/.oh-my-zsh" ] 
-# then
-#     echo "oh-my-zsh is already installed" 
-# else
-#     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-#     # Append zshrc stuff to end of file
-#     touch ~/.zshrc # not sure if this will always exist at this point :/
-#     cat .zshrc >> ~/.zshrc
-# fi
+# Install and configure Oh My ZSH (if it is not already installed)
+if [ -d "/home/coder/.oh-my-zsh" ] 
+then
+    echo "oh-my-zsh is already installed" 
+else
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    # Append zshrc stuff to end of file
+    touch ~/.zshrc # not sure if this will always exist at this point :/
+    cat .zshrc >> ~/.zshrc
+fi
 
 # # copy dotfiles into ~
 # /bin/bash shopt -s dotglob # include . in *
