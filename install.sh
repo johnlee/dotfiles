@@ -5,6 +5,7 @@ echo "Install script running"
 # # Install ZSH
 sudo apt-get install -y zsh
 sudo usermod -s /usr/bin/zsh $(whoami)
+sudo chsh -s /bin/zsh $USER
 
 # Install and configure Oh My ZSH (if it is not already installed)
 if [ -d "/home/coder/.oh-my-zsh" ] 
